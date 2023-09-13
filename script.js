@@ -1,5 +1,21 @@
-const slides = document.querySelectorAll(".img-container");
-console.log(slides);
+const images = [
+  "img1.jpg",
+  "img2.jpg",
+  "img3.jpg",
+  "img4.jpg",
+  "img5.jpg",
+  "img6.jpg",
+];
+
+images.map((element) => {
+  const selector = document.getElementById("container");
+  const imgElement = document.createElement("img");
+  imgElement.src = element;
+  imgElement.id = "img-container";
+  selector.appendChild(imgElement);
+});
+const slides = document.querySelectorAll("#img-container");
+console.log("--->slides", slides);
 
 let counter = 0;
 if (counter == 0) {
@@ -29,13 +45,13 @@ const prev = () => {
 };
 
 const slideImage = () => {
-  for (let i = 0; i < 6; i++) {
-    if (i == counter) {
-      document.getElementById(i).style.backgroundColor = "white";
+  images.forEach((el, index) => {
+    if (index == counter) {
+      document.getElementById(index).style.backgroundColor = "white";
     } else {
-      document.getElementById(i).style.backgroundColor = "black";
+      document.getElementById(index).style.backgroundColor = "black";
     }
-  }
+  });
   slides.forEach((slide) => {
     slide.style.transform = `translateX(-${counter * 100}%)`;
 

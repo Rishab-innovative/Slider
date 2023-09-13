@@ -15,6 +15,11 @@ body {
     background-size: 100% 100%;
 }
 
+img {
+    height: 100%;
+    width: 100%;
+}
+
 #container {
     height: 50vh;
     width: 50vw;
@@ -39,6 +44,7 @@ body {
     position: absolute;
     top: 45%;
     right: 0;
+    z-index: 5;
 }
 
 #left:hover,
@@ -47,7 +53,7 @@ body {
     background-color: white;
 }
 
-.img-container {
+#img-container {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -65,7 +71,6 @@ body {
 .btn {
     border-radius: 50%;
     height: 0.7rem;
-    /* margin-left: 0.2rem; */
     width: 0.8rem;
     background-color: black;
 }
