@@ -61,7 +61,7 @@ img {
 
 }
 
-.carousel {
+#carousel {
     width: 10%;
     height: 1rem;
     display: flex;
@@ -85,7 +85,7 @@ img {
         width: 60vw;
     }
 
-    .carousel {
+    #carousel {
         width: 12%;
     }
 }
@@ -95,7 +95,7 @@ img {
         width: 70vw;
     }
 
-    .carousel {
+    #carousel {
         width: 18%;
     }
 }
@@ -111,13 +111,13 @@ img {
         font-size: 1rem;
     }
 
-    .carousel {
+    #carousel {
         width: 25%;
     }
 }
 
 @media screen and (max-width:376px) {
-    .carousel {
+    #carousel {
         width: 35%;
     }
 }
@@ -127,7 +127,7 @@ img {
         gap: 1rem;
     }
 
-    .carousel {
+    #carousel {
         height: 3rem;
         width: 16%;
 

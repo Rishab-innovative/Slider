@@ -1,3 +1,4 @@
+let counter = 0;
 const images = [
   "img1.jpg",
   "img2.jpg",
@@ -6,18 +7,29 @@ const images = [
   "img5.jpg",
   "img6.jpg",
 ];
-
-images.map((element) => {
+let length = images.length - 1;
+images.map((element, index) => {
   const selector = document.getElementById("container");
   const imgElement = document.createElement("img");
   imgElement.src = element;
   imgElement.id = "img-container";
   selector.appendChild(imgElement);
-});
-const slides = document.querySelectorAll("#img-container");
-console.log("--->slides", slides);
 
-let counter = 0;
+  const select = document.getElementById("carousel");
+  const btnElement = document.createElement("span");
+  btnElement.id = index;
+  btnElement.className = "btn";
+  select.appendChild(btnElement);
+
+  const slideBtn = document.querySelectorAll(".btn");
+  slideBtn[index].addEventListener("click", function () {
+    counter = index;
+    slideImage();
+  });
+});
+
+const slides = document.querySelectorAll("#img-container");
+
 if (counter == 0) {
   document.getElementById("left").disabled = true;
 }
@@ -45,27 +57,21 @@ const prev = () => {
 };
 
 const slideImage = () => {
+  console.log("--slideImage--");
   images.forEach((el, index) => {
-    if (index == counter) {
-      document.getElementById(index).style.backgroundColor = "white";
-    } else {
-      document.getElementById(index).style.backgroundColor = "black";
-    }
+    index == counter
+      ? (document.getElementById(index).style.backgroundColor = "white")
+      : (document.getElementById(index).style.backgroundColor = "black");
   });
   slides.forEach((slide) => {
     slide.style.transform = `translateX(-${counter * 100}%)`;
 
-    counter == 5
+    counter == length
       ? (document.getElementById("right").disabled = true)
       : (document.getElementById("right").disabled = false);
 
-    counter != 0
+    counter
       ? (document.getElementById("left").disabled = false)
       : (document.getElementById("left").disabled = true);
   });
 };
-
-function sliderBtn(data) {
-  counter = data;
-  slideImage();
-}
