@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-image: url("bg2.jpg");
+    background-size: 100% 100%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    height: 50vh;
+    width: 50vw;
+    overflow: hidden;
+    position: relative;
+}
+
+#left {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 5;
+    padding: 0.5rem;
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+#right {
+    padding: 0.5rem;
+    font-size: 2rem;
+    opacity: 0.5;
+    position: absolute;
+    top: 45%;
+    right: 0;
+    z-index: 5;
+}
+
+#left:hover,
+#right:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+#img-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+
+}
+
+#carousel {
+    width: 10%;
+    height: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    border-radius: 50%;
+    height: 0.7rem;
+    width: 0.8rem;
+    background-color: black;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+@media screen and (max-width:1024px) {
+    #container {
+        width: 60vw;
+    }
+
+    #carousel {
+        width: 12%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #container {
+        width: 70vw;
+    }
+
+    #carousel {
+        width: 18%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #container {
+        width: 100vw;
+    }
+
+    #left,
+    #right {
+        padding: 0.3rem;
+        font-size: 1rem;
+    }
+
+    #carousel {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:376px) {
+    #carousel {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width:1800px) {
+    body {
+        gap: 1rem;
+    }
+
+    #carousel {
+        height: 3rem;
+        width: 16%;
+
+    }
+
+    .btn {
+        height: 2rem;
+        width: 1.5rem;
+    }
+}
